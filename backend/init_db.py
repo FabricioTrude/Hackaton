@@ -24,6 +24,17 @@ VALUES (
 )
 """)
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS scripts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL UNIQUE,
+    caminho TEXT NOT NULL,
+    parametros TEXT,
+    descricao TEXT,
+    ativo INTEGER NOT NULL DEFAULT 1
+)
+""")
+
 connection.commit()
 
 cursor.execute("""
@@ -31,8 +42,4 @@ SELECT *
 FROM configuracoes
 """)
 
-print(cursor.fetchall())
-
 connection.close()
-print("Banco Inicializado! ", DB_PATH)
-print("Linhas afetadas: ", cursor.rowcount)
