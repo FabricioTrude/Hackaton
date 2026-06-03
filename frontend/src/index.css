@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Bai Jamjuree, sans-serif;
+}
+.app{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+body{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #040d1a;
+  background-image:
+          radial-gradient(circle at 100% 90%, rgba(80, 200, 255, 0.12), transparent 20%),
+          radial-gradient(circle at 70% 80%, rgba(40, 150, 220, 0.08), transparent 30%),
+          linear-gradient(
+                  150deg,
+                  #040d1a 10%,
+                  #08112b 70%,
+                  #0a1c3d 90%,
+                  #123a52 98%,
+                  #1a4d66 100%
+          );
+}

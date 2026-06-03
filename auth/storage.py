@@ -1,3 +1,3 @@
 TOKENS = {
-    "123456": {"user": "admin"}
+    "000000": {"user": "admin"}
 }

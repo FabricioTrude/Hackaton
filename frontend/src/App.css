@@ -1,0 +1,193 @@
+.main-box{
+  align-self: center;
+  border-radius: 4rem;
+  height: 70vh;
+  width: 70vw;
+  background-color: rgb(223, 223, 223);
+  text-align: center;
+  overflow: hidden;
+  border: 2px solid rgb(108, 108, 108);
+  .title{
+    height: 12%;
+    font-size: 4rem;
+    border-bottom: 1px solid rgb(108, 108, 108);
+  }
+}
+#dashboard{
+  height: 100%;
+  .dashboard-wrapper{
+    display: flex;
+    height: 88%;
+  }
+}
+
+.sidebar{
+  height: 100%;
+  width: 30%;
+  border-right: 1px solid rgb(108, 108, 108);
+  .categoria{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+  .endpoint{
+    font-size: 1.2rem;
+    text-wrap: auto;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+.endpoint-wrapper{
+  overflow: hidden;
+  width: 70%;
+  height: 100%;
+  .endpoint-input-wrapper{
+    height: 55%;
+    border-bottom: 1px solid rgb(108, 108, 108);
+    .endpoint-header{
+      height: 40%;
+      /*background-color: lightpink;*/
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      #endpoint-summary-name{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+      }
+      .endpoint-path{
+        font-size: 1.0rem;
+        margin: 0 0 1rem 0;
+      }
+    }
+    .endpoint-body-wrapper{
+      height: 60%;
+      .endpoint-body-header{
+        padding-top: 1.2rem;
+        opacity: 0.8;
+        font-size: 1.2rem;
+        margin-bottom: 0.7rem;
+      }
+      .form-section{
+        height: 45%;
+        overflow: auto;
+        display:grid;
+        grid-template-columns: 25% 1fr;
+        gap: 12px 32px;
+        align-items: center;
+        .form-field{
+          display: contents;
+          & label{
+            justify-self: end;
+            font-weight: 500;
+          }
+          & input{
+            width: 70%;
+            padding: 6px 10px;
+          }
+        }
+        &::-webkit-scrollbar{
+          width: 10px;
+         }
+        &::-webkit-scrollbar-track{
+           background: transparent;
+         }
+        &::-webkit-scrollbar-thumb{
+           background-color: rgb(108, 108, 108);
+           border-radius: 20px;
+           border: 3px solid rgb(223, 223, 223);
+         }
+      }
+      .form-btn{
+        position: relative;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        opacity: 0.8;
+        border-radius: 1rem;
+        font-weight: bold;
+        transition: opacity 0.2s ease-in-out;
+        border: 1px solid rgb(108, 108, 108);
+        &:hover{
+          opacity: 1;
+        }
+        &.execute{
+          bottom: -5px;
+          color: white;
+          background-color: rgb(10, 150, 10);
+        }
+      }
+    }
+  }
+  .endpoint-response-wrapper{
+    display: flex;
+    height: 45%;
+    justify-content: space-around;
+    .response-box-wrapper{
+      height: 100%;
+      margin-top: 1rem;
+      width: 45%;
+      .response-title{
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none !important;
+      }
+      .response-box{
+        overflow: auto;
+        height: 80%;
+        border-radius: 1rem;
+        border: 1px solid rgb(108, 108, 108);
+        background-color: #0c0b0b;
+        &::-webkit-scrollbar{
+          overflow: hidden;
+          width: 5px;
+          height: 5px;
+        }
+        &::-webkit-scrollbar-track{
+          background: transparent;
+        }
+        &::-webkit-scrollbar-thumb{
+          background-color: rgb(108, 108, 108);
+          border-radius: 20px;
+        }
+      }
+    .stdout{
+      border: 1px solid green;
+      color: green;
+    }
+    .stderr{
+      border: 1px solid red;
+      color: red;
+    }
+    }
+  }
+}
+
+.method{
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  color:white;
+  font-weight: bold;
+  border: 1px solid rgb(108, 108, 108);
+  &.method-POST{
+    background-color: rgb(10, 150, 10);
+  }
+  &.method-GET{
+    background-color: rgb(10, 10, 150);
+  }
+}
+
+.empty-state{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40%;
+  font-size: 1.6rem;
+  opacity: 0.8;
+}

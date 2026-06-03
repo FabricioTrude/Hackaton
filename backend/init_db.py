@@ -3,8 +3,18 @@ from pathlib import Path
 
 DB_PATH = Path(__file__).parent/"database.db"
 connection = sqlite3.connect(DB_PATH)
-
 cursor = connection.cursor()
+
+auth_dir = Path(__file__).parent / "auth"
+auth_dir.mkdir(exist_ok=True)
+
+storage_file = auth_dir / "storage.py"
+
+storage_file.write_text("""\
+TOKENS = {
+    "123456": {"user": "admin"}
+}
+""", encoding="utf-8")
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS configuracoes (
