@@ -35,6 +35,20 @@ CREATE TABLE IF NOT EXISTS scripts(
 )
 """)
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS logs(
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               horario TEXT NOT NULL,
+               script TEXT NOT NULL,
+               parametros TEXT,
+               log_status TEXT NOT NULL,
+               ip TEXT,
+               tempo_execucao REAL,
+               output TEXT
+               )
+               
+""")
+
 connection.commit()
 
 cursor.execute("""
