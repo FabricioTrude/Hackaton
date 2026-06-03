@@ -17,6 +17,7 @@ import os
 from auth.dependencies import verify_token
 from auth.storage import TOKENS
 from backend.database import atualizar_script, obter_script, obter_scripts, cadastrar_script, get_connection, setar_script
+from backend.db.init_db import init_db
 from backend.logger import Logger
 from auth.tokens import alterar_token, obter_token, validar_token
 
@@ -61,6 +62,17 @@ def home():
     return {
         "token": obter_token()
     }
+
+
+@app.post("/dev/init-db")
+def create_db():
+    init_db()
+    return {"status": "db criado"}
+
+
+@app.post("/dev/nuke-db")
+def nuke_db(token=Depends(verify_token)):
+    return nuke_db(confirm=True)
 
 
 @app.post("/auth/novo_token")
